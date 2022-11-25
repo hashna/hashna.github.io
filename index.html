@@ -140,22 +140,22 @@
     </tbody>
   </table>
   <script>
-    function search() {
-
-       var name = document.getElementById("searchForm").elements["searchItem"].value;
-       var pattern = name.toLowerCase();
-       var targetId = "";
-     
-       var divs = document.getElementsByClassName("td");
-       for (var i = 0; i < divs.length; i++) {
-          var para = divs[i].getElementsByTagName("td");
-          var index = para[0].innerText.toLowerCase().indexOf(pattern);
-          if (index != -1) {
-             targetId = divs[i].parentNode.id;
-             document.getElementById(targetId).scrollIntoView();
-             break;
+    const searchFun= () =>{
+      let filter = document.getElementById('myInput').value.toUpperCase();
+      let myTable= document.getElementById('myTable');
+      let tr=myTable.getElementsByTagName('tr');
+      for(var i=0; i<tr.length;i++){
+        let td=tr[i].getElementsByTagName('td')[0];
+        if(td){
+          let textvlaue=td.textContent ||td.innerHTML;
+          if(textvlaue.toUpperCase().indexOf(filter)> -1){
+            tr[i].style.display="";
+                }else{
+                tr[i].style.display="none";
+               }
           }
-       }  
+        }
+      }
     }
    </script>
     
