@@ -13,7 +13,7 @@
 </head>
 <body>
   <h2 style="text-align: center;color:#06283D;"><u>IT MISSION ALAPPUZHA</u></h2>
- <input type="text" name="" id="myInput" placeholder="Search By Date" onkeyup="searchFun()">
+ <input type="text" name="" id="myInput" placeholder="Search By Subject" onkeyup="searchFun()">
  
   
   <table id="myTable" border="1">
@@ -135,7 +135,7 @@
         let myTable= document.getElementById('myTable');
        let tr = myTable.getElementsByTagName('tr');
         for(var i=0;i<tr.length;i++){
-            let td=tr[i].getElementsByTagName('td')[0];
+            let td=tr[i].getElementsByTagName('td')[1];
             if(td){
                 let textvlaue=td.textContent ||td.innerHTML;
                 if(textvlaue.toUpperCase().indexOf(filter) > -1){
